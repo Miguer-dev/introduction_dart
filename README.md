@@ -92,6 +92,100 @@ final String nickname = 'Bobby';
 const bar = 1000000; 
 const double atm = 1.01325 * bar;
 ```
+## Typedefs
+Is a concise way to refer to a type. Recommended use inline function types instead of typedefs for functions.
+```Dart
+typedef IntList = List<int>;
+IntList il = [1, 2, 3];
+
+typedef ListMapper<X> = Map<X, List<X>>;
+ListMapper<String> m2 = {};  // Map<String, List<String>> m2 = {};
+
+typedef Compare<T> = int Function(T a, T b);
+Compare<int> => a - b;
+```
+----------------------
+# Collections
+
+## Records
+Records are a collection types fixed-sized, heterogeneous, typed and immutable.
+```Dart
+(String, int) record;
+record = ('A string', 123);
+
+({int a, bool b}) record;
+record = (a: 123, b: true);
+
+var record = ('first', a: 2, b: true, 'last');
+print(record.$1); // 'first'
+print(record.a); // 2
+print(record.b); // true
+print(record.$2); // 'last'
+```
+
+## Lists
+Lists in Dart are ordered collections of elements. They may contain duplicate elements and can be accessed by their index
+```Dart
+var list = [1, 2, 3];
+List<int> list2 = [4, 5, 6];
+
+list.length // 3
+list[0] == 1 // true
+list[1] = 1;
+```
+
+## Sets
+Sets in Dart are unordered collections of unique items.
+```Dart
+var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+Set<String> halogens2 = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+var elements = <String>{}; // Set<String> names = {};
+elements.add('fluorine');
+elements.addAll(halogens);
+elements.length
+```
+
+## Maps
+Maps in Dart are unordered collections of key-value pairs. Each key in a map is unique and can be used to access its corresponding value.
+```Dart
+var nobleGases = {  //Map<int, String>
+  2: 'helium',
+  10: 'neon',
+  18: 'argon',
+};
+
+var gifts = Map<String, String>(); // new Map<String, String>()
+gifts['first'] = 'partridge';
+gifts['second'] = 'turtledoves';
+gifts['fifth'] = 'golden rings';
+
+gifts['sex'] == null; // true
+gifts.length
+```
+
+### Spread operators
+Spread operators provide a concise way to insert multiple values into a collection. Example to insert all the values of a list into another list.
+
+```Dart
+var list = [1, 2, 3];
+var list2 = [0, ...list];
+var list3 = [0, ...?list]; //avoid exceptions if list is null
+```
+
+### Control-flow operators
+Collection if and collection for for use in list, map, and set literals. You can use these operators to build collections.
+
+```Dart
+var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+var nav = ['Home', 'Furniture', 'Plants', if (login case 'Manager') 'Inventory'];
+
+var listOfInts = [1, 2, 3];
+var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+listOfStrings[1] == '#1'; // true
+```
+
+
 
 ----------------------
 
