@@ -230,3 +230,55 @@ void main(List<String> arguments) {
   assert(arguments[1] == 'test');
 }
 ```
+
+
+----------------------
+
+
+
+# Patterns
+A pattern represents the shape of a set of values that it may match against actual values.
+
+Matching: A pattern always tests against a value to determine if the value has the form you expect. In other words, you are checking if the value matches the pattern.
+
+Destructuring: When an object and pattern match, the pattern can then access the object’s data and extract it in parts. In other words, the pattern destructures the object.
+
+```Dart
+var numList = [1, 2, 3];
+var [a, b, c] = numList; // List pattern [a, b, c] destructures the three elements from numList...
+print(a + b + c);  // ...and assigns them to new variables.
+```
+
+## Pattern types examples
+
+```Dart
+var isPrimary = switch (color) {
+  Color.red || Color.yellow || Color.blue => true,
+  _ => false
+};
+
+var userAccessType = switch((hasAccess, isOwner)){
+  (true,true) => 'admin',
+  (true,false) => 'user',
+  (false,false) => 'denied',
+};
+
+var value = switch (char) {
+    < 32 => 'control',
+    == 32 => 'space',
+    > 32 && < 48 => 'punctuation',
+    >= 48 && <= 57 => 'digit',
+    _ => ''
+  };
+
+String? name = "John";
+if (name case final name?){
+  print(name);
+}
+switch (name){
+  case var name?: 
+    print(name);
+  default:
+    print("empty name");
+}
+```
