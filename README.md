@@ -209,9 +209,46 @@ For functions that contain just one expression, you can use a shorthand syntax. 
 bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
 ```
 
-
-
 Functions can be assigned to variables or passed as arguments to other functions.
+
+## Parameters
+
+When defining a function, use {param1, param2, …} to specify named parameters.If you don’t provide a default value or mark a named parameter as required, their types must be nullable as their default value will be null.
+```Dart
+/// Sets the [bold] and [hidden] flags ...
+void enableFlags({bool? bold, bool? hidden}) {...}
+enableFlags(bold: true, hidden: false);
+
+void enableFlags({bool bold = false, bool hidden = false}) {...}
+// bold will be true; hidden will be false.
+enableFlags(bold: true);
+
+void enableFlags({bool bold = false, required bool hidden}) {...}
+// bold will be false; hidden is required.
+enableFlags(hidden: true);
+```
+
+Wrapping a set of function parameters in [] marks them as optional positional parameters. If you don’t provide a default value, their types must be nullable as their default value will be null.
+```Dart
+String say(String from, String msg, [String? device]) {
+  var result = '$from says $msg';
+  if (device case final device?) {
+    result = '$result with a $device';
+  }
+  return result;
+}
+```
+
+## Return
+All functions return a value. If no return value is specified, the statement return null; is implicitly appended to the function body.
+To return multiple values in a function, aggregate the values in a record.
+
+```Dart
+(String, int) foo() {
+  return ('something', 42);
+}
+```
+
 
 ## Main
 
@@ -231,6 +268,13 @@ void main(List<String> arguments) {
 }
 ```
 
+## Anonymous Function
+It behaves the same as a regular function, but it doesn’t have a name associated with it. Can have zero or more parameters with optional type annotations.
+```Dart
+const list = ['apples', 'bananas', 'oranges'];
+list.map((item) => item.toUpperCase())
+    .forEach((item) => print('$item: ${item.length}'));
+```
 
 ----------------------
 

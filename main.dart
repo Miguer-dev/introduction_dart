@@ -1,5 +1,5 @@
 void main() {
-  test();
+  print(say("Miguel", "Hey there!", " to all of you!"));
 }
 
 test() {
@@ -13,4 +13,13 @@ test() {
     default:
       print("empty name");
   }
+}
+
+String say(String from, String msg, [String? device]) {
+  var result = '$from says $msg';
+
+  if (device case final device?) {
+    result = '$result with a $device';
+  }
+  return result;
 }
