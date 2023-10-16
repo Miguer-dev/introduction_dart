@@ -326,3 +326,63 @@ switch (name){
     print("empty name");
 }
 ```
+----------------------
+
+# Control Flow
+
+## Loops
+
+```Dart
+var message = StringBuffer('Dart is fun');
+for (var i = 0; i < 5; i++) {
+  message.write('!');
+}
+
+for (final candidate in candidates) {
+  candidate.interview();
+}
+
+var collection = [1, 2, 3];
+collection.forEach(print); // 1 2 3
+
+while (!isDone()) {
+  doSomething();
+}
+
+do {
+  printLine();
+} while (!atEndOfPage());
+```
+*The use of break and continue is allowed.
+
+## Branches
+
+```Dart
+if (isRaining()) {
+  you.bringRainCoat();
+} else if (isSnowing()) {
+  you.wearJacket();
+} else {
+  car.putTopDown();
+}
+
+if (pair case [int x, int y]) return Point(x, y); //If the pattern matches the value
+
+switch (charCode) {
+  case slash || star || plus || minus: // Logical-or pattern
+    token = operator(charCode);
+  case comma || semicolon: // Logical-or pattern
+    token = punctuation(charCode);
+  case >= digit0 && <= digit9: // Relational and logical-and patterns
+    token = number();
+  default:
+    throw FormatException('Invalid');
+}
+
+token = switch (charCode) {
+  slash || star || plus || minus => operator(charCode),
+  comma || semicolon => punctuation(charCode),
+  >= digit0 && <= digit9 => number(),
+  _ => throw FormatException('Invalid')
+};
+```
