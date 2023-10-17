@@ -4,9 +4,23 @@
     - [Null safety](null-safety)
     - [Late](late)
     - [Final and Const](final-and-const)
-3. [Functions](#functions)
-    - [Main](#main)
-
+    - [Typedefs](typedefs)
+3. [Collections](#collections)
+    - [Records](records)
+    - [Lists](lists)
+    - [Sets](sets)	
+    - [Maps](maps)		
+4. [Functions](#functions)
+    - [Parameters](parameters)
+    - [Return](return)
+    - [Main](main)
+    - [Anonymous Functions](anonymous-functions)
+5. [Patterns](#patterns)
+    - [Pattern types examples](patterns-types-examples)
+6. [Control Flow](#control-flow)
+    - [Loops](loops)
+    - [Branches](branches)
+7. [Error Handling](#error-handling)
 
 
 ------------------
