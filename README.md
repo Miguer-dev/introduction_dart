@@ -385,4 +385,29 @@ token = switch (charCode) {
   >= digit0 && <= digit9 => number(),
   _ => throw FormatException('Invalid')
 };
+```   
+
+--------------------------------
+# Error Handling
+
+```Dart
+try {
+  breedMoreLlamas();
+} on OutOfLlamasException {
+  // A specific exception
+  buyMoreLlamas();
+} on Exception catch (e) {
+  // Anything else that is an exception
+  print('Unknown exception: $e');
+} catch (e, s) { 
+  // No specified type, handles all
+  print('Exception details:\n $e');
+  print('Stack trace:\n $s');
+} finally {
+  // Runs after any matching catch clauses
+  cleanLlamaStalls();
+}
 ```
+
+
+
