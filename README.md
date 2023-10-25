@@ -84,10 +84,18 @@ Null safety prevents an error that results from unintentional access of variable
 - You can control whether the type allows null, add a ?
 - You must initialize variables before using them. Nullable variables default to null, so they are initialized by default.
 - You can’t access properties or call methods on an expression with a nullable type.
+- ??= assignment operator, which assigns a value to a variable only if that variable is currently null.
+- ?? operator, which returns the expression on its left unless that expression’s value is null.
 
 ```Dart
 String? name  // Nullable type. Can be `null` or string. Defaurl value null
-String name = 'Hola'   // Non-nullable type. Cannot be `null` but can be string. Initial value 'Hola'
+String name1 = 'Hola'   // Non-nullable type. Cannot be `null` but can be string. Initial value 'Hola'
+
+print(name1 ?? 'Hi'); // <-- Prints Hola.
+print(name ?? 'Hello'); // <-- Prints Hello.
+
+name ??= 'Hello'; //name = Hello
+name1 ??= 'Hi';   //name1 = Hola
 ```
 
 ## Late
