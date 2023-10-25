@@ -1,6 +1,7 @@
 # Unveiling the Potential of Dart - A Developer's Insight
 1. [Introduction](#introduction)
 2. [Variables](#variables)
+    - [String interpolation](#string-interpolation)
     - [Null safety](#null-safety)
     - [Late](#late)
     - [Final and Const](#final-and-const)
@@ -66,6 +67,16 @@ List<String> flybyObjects = ['Jupiter', 'Jupiter', 'Uranus', 'Neptune'];
 Map<String, dynamic> person = {'name': 'John', 'age': 25};
 Set<String> fruits = {'apple', 'banana', 'orange'};
 ```
+
+## String interpolation
+
+To put the value of an expression inside a string, use ${expression}. If the expression is an identifier, you can omit the {}.
+```Dart
+'${3 + 2}'	 	            //5
+'${"word".toUpperCase()}'	//WORD
+'$myObject'	                //myObject.toString()
+```
+
 
 ## Null safety
 
