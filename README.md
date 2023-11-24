@@ -274,7 +274,7 @@ String say(String from, String msg, [String? device]) {
 
 ## Return
 All functions return a value. If no return value is specified, the statement return null; is implicitly appended to the function body.
-To return multiple values in a function, aggregate the values in a record.
+To return multiple values in a function, aggregate the values in a [record](#records).
 
 ```Dart
 (String, int) foo() {
